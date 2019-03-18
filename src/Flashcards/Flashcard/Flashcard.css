@@ -1,0 +1,86 @@
+.Flashcard {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid gray;
+    position: relative;
+    cursor: pointer;
+    perspective: 100px;
+    display: grid;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.Flashcard--flipped {
+    height: 325px;
+    width: 325px;
+    background-color: lightgray;
+    transform: rotateY(-180deg);
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.Flashcard__top:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background:purple;
+    content: '';
+    transition: height 0.2s ease-out;
+    position: absolute;
+}
+
+.Flashcard:hover:before {
+    height: 10px;
+    opacity: 0.7;
+}
+
+.Flashcard:hover .Flashcard--front, 
+.Flashcard:hover .Flashcard--back {
+    opacity: 0.7;
+}
+
+.Flashcard:hover .Flashcard__flipper {
+    opacity: 1;
+}
+
+.Flashcard__content {
+    justify-self: center;
+    align-self: center;
+}
+
+.Flashcard__text {
+    word-break: break-word;
+    max-height: 270px;
+    overflow: hidden;
+}
+
+.Flashcard--back {
+    transform: rotateY(180deg);
+}
+
+.Flashcard--flipped .Flashcard__flipper {
+    left: 0;
+}
+
+.Flashcard__image {
+    height: 100%;
+    width: 100%;
+}
+
+.Flashcard__flipper {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+}
+
+.Flashcard__helper {
+    margin: 10px;
+}

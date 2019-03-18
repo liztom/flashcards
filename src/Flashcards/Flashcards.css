@@ -1,0 +1,19 @@
+.Flashcards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+@media only screen and (max-width: 1099px) {
+    .Flashcards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .Flashcards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
